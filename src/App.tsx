@@ -1,4 +1,5 @@
 import { Grid, GridItem } from "@chakra-ui/react";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
@@ -8,12 +9,12 @@ function App() {
         lg: `"nav nav" "aside main"`, // Large: nav full width, aside + main below
       }}
       gridTemplateColumns={{ base: "1fr", lg: "200px 1fr" }} // "aside" is 200px, "main" fills remaining space
-      gridTemplateRows="50px 50px" // Both nav and content rows are fixed at 50px height
+      gridTemplateRows="60px 60px" // Both nav and content rows are fixed at 50px height
       h="100vh" // Full viewport height
     >
       {/* Navbar */}
-      <GridItem area="nav" bg="coral" height="50px">
-        Nav
+      <GridItem area="nav" height="60px">
+        <NavBar />
       </GridItem>
 
       {/* Sidebar (gold) - Only visible on lg screens */}
