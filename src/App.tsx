@@ -18,14 +18,12 @@ function App() {
       </GridItem>
 
       {/* Sidebar (gold) - Only visible on lg screens */}
-      <GridItem area="aside" bg="gold" display={{ base: "none", lg: "block" }}>
+      <GridItem area="aside" display={{ base: "none", lg: "block" }}>
         Aside
       </GridItem>
 
       {/* Main content (dodgerblue) */}
-      <GridItem area="main" bg="dodgerblue">
-        Main
-      </GridItem>
+      <GridItem area="main">Main</GridItem>
     </Grid>
   );
 }
