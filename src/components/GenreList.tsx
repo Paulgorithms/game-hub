@@ -3,6 +3,7 @@ import getCroppedImageURL from "@/services/image-url";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
 import {
@@ -14,7 +15,7 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 
-const GenreList = ({ onSelectGenre }: Props) => {
+const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
   const { data, isLoading, error } = useGenres();
 
   if (error) return null;
@@ -34,6 +35,7 @@ const GenreList = ({ onSelectGenre }: Props) => {
             <Button
               onClick={() => onSelectGenre(genre)}
               fontSize="lg"
+              fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
               variant="link"
             >
               {genre.name}
