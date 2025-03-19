@@ -1,0 +1,30 @@
+import {
+  Tooltip as ChakraTooltip,
+  TooltipProps as ChakraTooltipProps,
+} from "@chakra-ui/react";
+import * as React from "react";
+
+export interface TooltipProps extends ChakraTooltipProps {
+  showArrow?: boolean;
+  content: string; // ✅ Ensure `content` is a string
+  disabled?: boolean;
+}
+
+export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
+  function Tooltip(
+    { showArrow = false, content, disabled, children, ...rest },
+    ref
+  ) {
+    if (disabled) return <>{children}</>;
+
+    return (
+      <ChakraTooltip
+        hasArrow={showArrow}
+        label={content} // ✅ Ensure this is a string
+        {...rest}
+      >
+        <span ref={ref}>{children}</span> {/* ✅ Wrap in a valid DOM element */}
+      </ChakraTooltip>
+    );
+  }
+);
