@@ -1,37 +1,52 @@
-# GameHub
+# Tutorial: game-hub
 
-GameHub is a video game discovery web app that helps you find new and interesting games to play. With GameHub, you can search for games by platform, genre, and more. 
-
-This is the project we build in my Ultimate React course. You can find the full course at: https://codewithmosh.com 
-
-## Getting Started
-
-To get started with GameHub, follow these steps:
+Game Hub is a web application that allows users to discover video games.
+It **fetches data** from the *RAWG API* and presents it in a responsive grid.
+Users can **filter** games by *genre* and *platform*, apply different **sorting** options, and **search** for specific titles to refine the displayed results.
 
 
-1. Clone this repository to your local machine.
-2. Run `npm install` to install the required dependencies.
-3. Get a RAWG API key at https://rawg.io/apidocs. You'll have to create an account first. 
-4. Add the API key to **src/services/api-client.ts**
-5. Run `npm run dev` to start the web server. 
+**Source Repository:** [https://github.com/Paulgorithms/game-hub](https://github.com/Paulgorithms/game-hub)
 
-## About the Course 
+```mermaid
+flowchart TD
+    A0["App Component & GameQuery State
+"]
+    A1["Data Fetching Hooks
+"]
+    A2["API Client
+"]
+    A3["Game Display Components
+"]
+    A4["Filtering & Sorting Components
+"]
+    A5["React Query Integration
+"]
+    A6["Data Types (TypeScript Interfaces)
+"]
+    A0 -- "Provides query state" --> A3
+    A0 -- "Provides update callbacks" --> A4
+    A4 -- "Updates query state" --> A0
+    A3 -- "Uses hook for game data" --> A1
+    A4 -- "Use hooks for filter options" --> A1
+    A1 -- "Uses API client" --> A2
+    A1 -- "Uses React Query" --> A5
+    A1 -- "Uses/Returns data types" --> A6
+    A0 -- "Uses type for state" --> A6
+```
 
-I have designed this course to teach you everything you need to know to become a proficient React developer. This course is the first part of a two-part series, covering the fundamentals. You'll learn how to:
+## Chapters
 
-- Build front-end apps with React and TypeScript
-- Build reusable function components
-- Style your components using vanilla CSS, CSS modules, and CSS-in-JS
-- Manage component state
-- Build forms with React Hook Forms
-- Implement form validation using Zod
-- Connect your React apps to the backend
-- Deploy your React apps
-- Use VSCode shortcuts to increase your productivity
-- Write clean code like a pro
-- Apply best practices
-
-
-By the end of this course, you'll have a solid understanding of React and be able to build real-world applications with React and TypeScript.
-
-You can find the full course at: https://codewithmosh.com 
+1. [App Component & GameQuery State
+](01_app_component___gamequery_state_.md)
+2. [Data Types (TypeScript Interfaces)
+](02_data_types__typescript_interfaces__.md)
+3. [Filtering & Sorting Components
+](03_filtering___sorting_components_.md)
+4. [Game Display Components
+](04_game_display_components_.md)
+5. [Data Fetching Hooks
+](05_data_fetching_hooks_.md)
+6. [React Query Integration
+](06_react_query_integration_.md)
+7. [API Client
+](07_api_client_.md)
